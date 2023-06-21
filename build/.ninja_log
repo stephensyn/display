@@ -18,3 +18,11 @@
 40	439	1687337321582766517	oled/CMakeFiles/oled.dir/src/DEV_Config.c.o	1b29870a65d55575
 1191	1411	1687337322558800641	oled/CMakeFiles/oled.dir/src/font8.c.o	c682d4a4500f6f61
 885	1130	1687337322274790721	oled/CMakeFiles/oled.dir/src/font12.c.o	9820175fcdc59986
+1	57	0	/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs	a9a33885a43172a1
+0	75	0	/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs	a9a33885a43172a1
+1	1798	1687350626046573914	CMakeFiles/distest.dir/src/Disdev.cpp.o	ff912024fe13374
+1800	2232	1687350626486567243	distest	12180961f14cdcbb
+2	56	0	/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs	a9a33885a43172a1
+2	1014	1687358779678762954	CMakeFiles/distest.dir/src/Disdev.cpp.o	ff912024fe13374
+1015	1366	1687358780026757615	distest	12180961f14cdcbb
+0	48	0	/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs	a9a33885a43172a1
