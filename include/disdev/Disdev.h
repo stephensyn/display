@@ -22,6 +22,10 @@ class Disdev
 {
 private:
     /* data */
+    UBYTE *BlackImage;
+    // 新建一个图像属性，这个属性包括图像缓存的名称、宽度、高度、翻转角度、颜色
+    void Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color);
+
 public:
     Disdev(/* args */);
     ~Disdev();
@@ -30,9 +34,6 @@ public:
 
     // 设置像素点的尺寸
     void Paint_SetScale(UBYTE scale);
-
-    // 新建一个图像属性，这个属性包括图像缓存的名称、宽度、高度、翻转角度、颜色
-    void Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color);
 
     // 选择图像缓存，选择的目的是你可以创建多个图像属性，图像缓存可以存在多个，你可以选择你所创建的每一张图像
     void Paint_SelectImage(UBYTE *image);
@@ -73,13 +74,5 @@ public:
     void Paint_DrawTime(UWORD Xstart, UWORD Ystart, PAINT_TIME *pTime, sFONT *Font,
                         UWORD Color_Background, UWORD Color_Foreground);
 };
-
-Disdev::Disdev(/* args */)
-{
-}
-
-Disdev::~Disdev()
-{
-}
 
 #endif
