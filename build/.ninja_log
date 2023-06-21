@@ -1,0 +1,19 @@
+# ninja log v5
+746	1027	1687300610333616285	oled/CMakeFiles/oled.dir/src/font24.c.o	68852a71268b9ecc
+1064	1266	1687300610569612649	oled/liboled.a	dec15fbbbf30924d
+1	387	1687300609681626330	oled/CMakeFiles/oled.dir/src/DEV_Config.c.o	f0a10c53c443c51b
+800	1064	1687300610369615730	oled/CMakeFiles/oled.dir/src/font8.c.o	25e63ecdf71f1098
+11	428	1687300609733625529	oled/CMakeFiles/oled.dir/src/OLED_1in5.c.o	65919c0ea4361423
+489	724	1687300610025621030	oled/CMakeFiles/oled.dir/src/font12.c.o	a21ee1f253746b20
+428	762	1687300610065620414	oled/CMakeFiles/oled.dir/src/dev_hardware_i2c.c.o	ff690a371cd7a7f0
+498	612	1687300609917622694	oled/CMakeFiles/oled.dir/src/font12CN.c.o	e9582f8bb2b6a219
+24	497	1687300609797624543	oled/CMakeFiles/oled.dir/src/RPI_sysfs_gpio.c.o	ff4a4e3705747347
+0	488	1687300609789624666	CMakeFiles/distest.dir/src/test.c.o	51b6b8021a9d17f2
+5	1008	1687300610309616655	oled/CMakeFiles/oled.dir/src/GUI_Paint.c.o	52fc0ac906e1e02e
+612	866	1687300610169618811	oled/CMakeFiles/oled.dir/src/font16.c.o	28a67b790b222cf8
+2	800	1687300610089620044	oled/CMakeFiles/oled.dir/src/GUI_BMPfile.c.o	26fb2844ad5f66d
+388	745	1687300610041620783	oled/CMakeFiles/oled.dir/src/dev_hardware_SPI.c.o	163ea46a8ec9747c
+1	62	0	/home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs	59c365f8c771c6a8
+1266	1452	1687300610757609753	distest	dbf82a36f63f3ff
+763	1044	1687300610349616038	oled/CMakeFiles/oled.dir/src/font24CN.c.o	e05e652d4ad6419c
+724	1027	1687300610329616346	oled/CMakeFiles/oled.dir/src/font20.c.o	429042e45def9a5b

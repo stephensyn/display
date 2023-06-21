@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.18)
+project(distest)
+set(CMAKE_CXX_STANDARD 11)
+add_subdirectory(oled)
+file(GLOB srcs CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/*.c include/display/*.h)
+add_executable(distest ${srcs}) 
+# # target_link_directories(distest include)
+# # target_sources(distest  ${srcs})                 #SSource是主程序    PBULIC后面跟的是子程序或者库
+# # # target_link_libraries(SSource PUBLIC b205)
+target_link_libraries(distest PUBLIC oled)

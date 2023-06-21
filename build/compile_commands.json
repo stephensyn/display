@@ -1,0 +1,77 @@
+[
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -I../oled/include -g -o CMakeFiles/distest.dir/src/test.c.o -c /home/stephen/study_c/display/src/test.c",
+  "file": "/home/stephen/study_c/display/src/test.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/DEV_Config.c.o -c /home/stephen/study_c/display/oled/src/DEV_Config.c",
+  "file": "/home/stephen/study_c/display/oled/src/DEV_Config.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/GUI_BMPfile.c.o -c /home/stephen/study_c/display/oled/src/GUI_BMPfile.c",
+  "file": "/home/stephen/study_c/display/oled/src/GUI_BMPfile.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/GUI_Paint.c.o -c /home/stephen/study_c/display/oled/src/GUI_Paint.c",
+  "file": "/home/stephen/study_c/display/oled/src/GUI_Paint.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/OLED_1in5.c.o -c /home/stephen/study_c/display/oled/src/OLED_1in5.c",
+  "file": "/home/stephen/study_c/display/oled/src/OLED_1in5.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/RPI_sysfs_gpio.c.o -c /home/stephen/study_c/display/oled/src/RPI_sysfs_gpio.c",
+  "file": "/home/stephen/study_c/display/oled/src/RPI_sysfs_gpio.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/dev_hardware_SPI.c.o -c /home/stephen/study_c/display/oled/src/dev_hardware_SPI.c",
+  "file": "/home/stephen/study_c/display/oled/src/dev_hardware_SPI.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/dev_hardware_i2c.c.o -c /home/stephen/study_c/display/oled/src/dev_hardware_i2c.c",
+  "file": "/home/stephen/study_c/display/oled/src/dev_hardware_i2c.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font12.c.o -c /home/stephen/study_c/display/oled/src/font12.c",
+  "file": "/home/stephen/study_c/display/oled/src/font12.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font12CN.c.o -c /home/stephen/study_c/display/oled/src/font12CN.c",
+  "file": "/home/stephen/study_c/display/oled/src/font12CN.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font16.c.o -c /home/stephen/study_c/display/oled/src/font16.c",
+  "file": "/home/stephen/study_c/display/oled/src/font16.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font20.c.o -c /home/stephen/study_c/display/oled/src/font20.c",
+  "file": "/home/stephen/study_c/display/oled/src/font20.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font24.c.o -c /home/stephen/study_c/display/oled/src/font24.c",
+  "file": "/home/stephen/study_c/display/oled/src/font24.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font24CN.c.o -c /home/stephen/study_c/display/oled/src/font24CN.c",
+  "file": "/home/stephen/study_c/display/oled/src/font24CN.c"
+},
+{
+  "directory": "/home/stephen/study_c/display/build",
+  "command": "/usr/bin/arm-linux-gnueabihf-gcc -DUSE_WIRINGPI_LIB -I../oled/include  -g -O0 -Wall  -g -o oled/CMakeFiles/oled.dir/src/font8.c.o -c /home/stephen/study_c/display/oled/src/font8.c",
+  "file": "/home/stephen/study_c/display/oled/src/font8.c"
+}
+]

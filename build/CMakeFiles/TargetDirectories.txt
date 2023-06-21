@@ -1,0 +1,6 @@
+/home/stephen/study_c/display/build/CMakeFiles/rebuild_cache.dir
+/home/stephen/study_c/display/build/CMakeFiles/edit_cache.dir
+/home/stephen/study_c/display/build/CMakeFiles/distest.dir
+/home/stephen/study_c/display/build/oled/CMakeFiles/rebuild_cache.dir
+/home/stephen/study_c/display/build/oled/CMakeFiles/edit_cache.dir
+/home/stephen/study_c/display/build/oled/CMakeFiles/oled.dir
