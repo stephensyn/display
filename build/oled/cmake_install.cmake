@@ -1,4 +1,4 @@
-# Install script for directory: /home/stephen/study_c/display/oled
+# Install script for directory: /home/stephen/study_c/disdev/oled
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

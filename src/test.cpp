@@ -1,6 +1,7 @@
 
 // #include </home/stephen/study_c/display/include/display/test.h>
-
+extern "C"
+{
 #include <oled/GUI_Paint.h>
 #include <oled/GUI_BMPfile.h>
 #include <oled/Debug.h>
@@ -10,7 +11,7 @@
 
 #include <oled/DEV_Config.h>
 #include <oled/OLED_1in5.h>
-
+}
 int main(void)
 {
 	printf("1.5inch OLED test demo\n");
@@ -22,7 +23,9 @@ int main(void)
 	printf("OLED Init...\r\n");
 	OLED_1in5_Init();
 	DEV_Delay_ms(500);
+	OLED_1in5_Clear();
 
+	DEV_Delay_ms(3000);
 	// // 0.Create a new image cache
 	UBYTE *BlackImage;
 	UWORD Imagesize = ((OLED_1in5_WIDTH % 2 == 0) ? (OLED_1in5_WIDTH / 2) : (OLED_1in5_WIDTH / 2 + 1)) * OLED_1in5_HEIGHT;
@@ -73,7 +76,7 @@ int main(void)
 
 		// Drawing on the image
 		printf("Drawing:page 3\r\n");
-		Paint_DrawString_EN(10, 0, "waveshare", &Font16, 0x1, 0xb);
+		Paint_DrawString_EN(10, 0, "waveshare", &Font16, 0xFFFF, 0xFFFF);
 		Paint_DrawString_EN(10, 17, "hello world", &Font8, 0x2, 0xc);
 		Paint_DrawNum(10, 30, 123.456789, &Font8, 4, 0x3, 0xd);
 		Paint_DrawNum(10, 43, 987654, &Font12, 5, 0x4, 0xe);
@@ -84,8 +87,8 @@ int main(void)
 
 		// Drawing on the image
 		printf("Drawing:page 4\r\n");
-		Paint_DrawString_CN(10, 0, "锟斤拷锟紸bc", &Font12CN, WHITE, WHITE);
-		// Paint_DrawString_CN(0, 20, "微雪锟斤拷锟斤拷", &Font24CN, WHITE, WHITE);
+		Paint_DrawString_CN(10, 0, "树莓派", &Font12CN, WHITE, WHITE);
+		Paint_DrawString_CN(0, 20, "微软", &Font24CN, WHITE, WHITE);
 		// Show image on page3
 		OLED_1in5_Display(BlackImage);
 		DEV_Delay_ms(2000);
@@ -93,7 +96,7 @@ int main(void)
 
 		// Drawing on the image
 		printf("Drawing:page 5\r\n");
-		// GUI_ReadBmp_16Gray("./pic/1in5.bmp", 0, 0);
+		GUI_ReadBmp_16Gray("../oled/pic/1in5.bmp", 0, 0);
 		// Show image on page4
 		OLED_1in5_Display(BlackImage);
 		DEV_Delay_ms(2000);

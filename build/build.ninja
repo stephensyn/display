@@ -39,7 +39,7 @@ include CMakeFiles/rules.ninja
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/stephen/study_c/display/build && /usr/bin/cmake --regenerate-during-build -S/home/stephen/study_c/display -B/home/stephen/study_c/display/build
+  COMMAND = cd /home/stephen/study_c/disdev/build && /usr/bin/cmake --regenerate-during-build -S/home/stephen/study_c/disdev -B/home/stephen/study_c/disdev/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -51,7 +51,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/stephen/study_c/display/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/stephen/study_c/disdev/build && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -66,10 +66,17 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 
 build cmake_object_order_depends_target_distest: phony || cmake_object_order_depends_target_oled
 
-build CMakeFiles/distest.dir/src/test.c.o: C_COMPILER__distest_Debug ../src/test.c || cmake_object_order_depends_target_distest
-  DEP_FILE = CMakeFiles/distest.dir/src/test.c.o.d
-  FLAGS = -g
-  INCLUDES = -I../oled/include
+build CMakeFiles/distest.dir/src/Disdev.cpp.o: CXX_COMPILER__distest_Debug ../src/Disdev.cpp || cmake_object_order_depends_target_distest
+  DEP_FILE = CMakeFiles/distest.dir/src/Disdev.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -I../oled/include -I../include
+  OBJECT_DIR = CMakeFiles/distest.dir
+  OBJECT_FILE_DIR = CMakeFiles/distest.dir/src
+
+build CMakeFiles/distest.dir/src/test.cpp.o: CXX_COMPILER__distest_Debug ../src/test.cpp || cmake_object_order_depends_target_distest
+  DEP_FILE = CMakeFiles/distest.dir/src/test.cpp.o.d
+  FLAGS = -g -std=gnu++11
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = CMakeFiles/distest.dir
   OBJECT_FILE_DIR = CMakeFiles/distest.dir/src
 
@@ -81,7 +88,7 @@ build CMakeFiles/distest.dir/src/test.c.o: C_COMPILER__distest_Debug ../src/test
 #############################################
 # Link the executable distest
 
-build distest: C_EXECUTABLE_LINKER__distest_Debug CMakeFiles/distest.dir/src/test.c.o | oled/liboled.a /usr/local/lib/libwiringPi.so || oled/liboled.a
+build distest: CXX_EXECUTABLE_LINKER__distest_Debug CMakeFiles/distest.dir/src/Disdev.cpp.o CMakeFiles/distest.dir/src/test.cpp.o | oled/liboled.a /usr/local/lib/libwiringPi.so || oled/liboled.a
   FLAGS = -g
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib  oled/liboled.a  /usr/local/lib/libwiringPi.so  -lm
   OBJECT_DIR = CMakeFiles/distest.dir
@@ -92,7 +99,7 @@ build distest: C_EXECUTABLE_LINKER__distest_Debug CMakeFiles/distest.dir/src/tes
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# /home/stephen/study_c/display/CMakeLists.txt
+# /home/stephen/study_c/disdev/CMakeLists.txt
 # =============================================================================
 
 
@@ -100,7 +107,7 @@ build distest: C_EXECUTABLE_LINKER__distest_Debug CMakeFiles/distest.dir/src/tes
 # Utility command for rebuild_cache
 
 build oled/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/stephen/study_c/display/build/oled && /usr/bin/cmake --regenerate-during-build -S/home/stephen/study_c/display -B/home/stephen/study_c/display/build
+  COMMAND = cd /home/stephen/study_c/disdev/build/oled && /usr/bin/cmake --regenerate-during-build -S/home/stephen/study_c/disdev -B/home/stephen/study_c/disdev/build
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -112,7 +119,7 @@ build oled/rebuild_cache: phony oled/CMakeFiles/rebuild_cache.util
 # Utility command for edit_cache
 
 build oled/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cd /home/stephen/study_c/display/build/oled && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+  COMMAND = cd /home/stephen/study_c/disdev/build/oled && /usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -131,7 +138,7 @@ build oled/CMakeFiles/oled.dir/src/DEV_Config.c.o: C_COMPILER__oled_Debug ../ole
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/DEV_Config.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -139,7 +146,7 @@ build oled/CMakeFiles/oled.dir/src/GUI_BMPfile.c.o: C_COMPILER__oled_Debug ../ol
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/GUI_BMPfile.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -147,7 +154,7 @@ build oled/CMakeFiles/oled.dir/src/GUI_Paint.c.o: C_COMPILER__oled_Debug ../oled
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/GUI_Paint.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -155,7 +162,7 @@ build oled/CMakeFiles/oled.dir/src/OLED_1in5.c.o: C_COMPILER__oled_Debug ../oled
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/OLED_1in5.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -163,7 +170,7 @@ build oled/CMakeFiles/oled.dir/src/RPI_sysfs_gpio.c.o: C_COMPILER__oled_Debug ..
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/RPI_sysfs_gpio.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -171,7 +178,7 @@ build oled/CMakeFiles/oled.dir/src/dev_hardware_SPI.c.o: C_COMPILER__oled_Debug 
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/dev_hardware_SPI.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -179,7 +186,7 @@ build oled/CMakeFiles/oled.dir/src/dev_hardware_i2c.c.o: C_COMPILER__oled_Debug 
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/dev_hardware_i2c.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -187,7 +194,7 @@ build oled/CMakeFiles/oled.dir/src/font12.c.o: C_COMPILER__oled_Debug ../oled/sr
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font12.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -195,7 +202,7 @@ build oled/CMakeFiles/oled.dir/src/font12CN.c.o: C_COMPILER__oled_Debug ../oled/
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font12CN.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -203,7 +210,7 @@ build oled/CMakeFiles/oled.dir/src/font16.c.o: C_COMPILER__oled_Debug ../oled/sr
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font16.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -211,7 +218,7 @@ build oled/CMakeFiles/oled.dir/src/font20.c.o: C_COMPILER__oled_Debug ../oled/sr
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font20.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -219,7 +226,7 @@ build oled/CMakeFiles/oled.dir/src/font24.c.o: C_COMPILER__oled_Debug ../oled/sr
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font24.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -227,7 +234,7 @@ build oled/CMakeFiles/oled.dir/src/font24CN.c.o: C_COMPILER__oled_Debug ../oled/
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font24CN.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -235,7 +242,7 @@ build oled/CMakeFiles/oled.dir/src/font8.c.o: C_COMPILER__oled_Debug ../oled/src
   DEFINES = -DUSE_WIRINGPI_LIB
   DEP_FILE = oled/CMakeFiles/oled.dir/src/font8.c.o.d
   FLAGS = -g -O0 -Wall  -g
-  INCLUDES = -I../oled/include
+  INCLUDES = -I../oled/include -I../include
   OBJECT_DIR = oled/CMakeFiles/oled.dir
   OBJECT_FILE_DIR = oled/CMakeFiles/oled.dir/src
 
@@ -268,14 +275,14 @@ build oled: phony oled/liboled.a
 # =============================================================================
 
 #############################################
-# Folder: /home/stephen/study_c/display/build
+# Folder: /home/stephen/study_c/disdev/build
 
 build all: phony distest oled/all
 
 # =============================================================================
 
 #############################################
-# Folder: /home/stephen/study_c/display/build/oled
+# Folder: /home/stephen/study_c/disdev/build/oled
 
 build oled/all: phony oled/liboled.a
 
@@ -286,13 +293,13 @@ build oled/all: phony oled/liboled.a
 #############################################
 # Phony target to force glob verification run.
 
-build /home/stephen/study_c/display/build/CMakeFiles/VerifyGlobs.cmake_force: phony
+build /home/stephen/study_c/disdev/build/CMakeFiles/VerifyGlobs.cmake_force: phony
 
 
 #############################################
 # Re-run CMake to check if globbed directories changed.
 
-build /home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | /home/stephen/study_c/display/build/CMakeFiles/VerifyGlobs.cmake_force
+build /home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs: VERIFY_GLOBS | /home/stephen/study_c/disdev/build/CMakeFiles/VerifyGlobs.cmake_force
   pool = console
   restat = 1
 
@@ -300,14 +307,14 @@ build /home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs: VERIFY_
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE /home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs | ../CMakeLists.txt ../oled/CMakeLists.txt /home/stephen/study_c/display/build/CMakeFiles/VerifyGlobs.cmake /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake
+build build.ninja: RERUN_CMAKE /home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs | ../CMakeLists.txt ../oled/CMakeLists.txt /home/stephen/study_c/disdev/build/CMakeFiles/VerifyGlobs.cmake /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build ../CMakeLists.txt ../oled/CMakeLists.txt /home/stephen/study_c/display/build/CMakeFiles/VerifyGlobs.cmake /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake: phony
+build ../CMakeLists.txt ../oled/CMakeLists.txt /home/stephen/study_c/disdev/build/CMakeFiles/VerifyGlobs.cmake /usr/share/cmake-3.18/Modules/CMakeCInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCXXInformation.cmake /usr/share/cmake-3.18/Modules/CMakeCheckCompilerFlagCommonPatterns.cmake /usr/share/cmake-3.18/Modules/CMakeCommonLanguageInclude.cmake /usr/share/cmake-3.18/Modules/CMakeGenericSystem.cmake /usr/share/cmake-3.18/Modules/CMakeInitializeConfigs.cmake /usr/share/cmake-3.18/Modules/CMakeLanguageInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInformation.cmake /usr/share/cmake-3.18/Modules/CMakeSystemSpecificInitialize.cmake /usr/share/cmake-3.18/Modules/Compiler/CMakeCommonCompilerMacros.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-C.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Compiler/GNU.cmake /usr/share/cmake-3.18/Modules/Internal/CMakeCheckCompilerFlag.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-C.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU-CXX.cmake /usr/share/cmake-3.18/Modules/Platform/Linux-GNU.cmake /usr/share/cmake-3.18/Modules/Platform/Linux.cmake /usr/share/cmake-3.18/Modules/Platform/UnixPaths.cmake CMakeCache.txt CMakeFiles/3.18.4/CMakeCCompiler.cmake CMakeFiles/3.18.4/CMakeCXXCompiler.cmake CMakeFiles/3.18.4/CMakeSystem.cmake: phony
 
 
 #############################################

@@ -3,62 +3,62 @@
 cmake_policy(SET CMP0009 NEW)
 
 # srcs at CMakeLists.txt:5 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/stephen/study_c/display/include/display/*.h")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/stephen/study_c/disdev/include/*.h")
 set(OLD_GLOB
-  "/home/stephen/study_c/display/include/display/test.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # srcs at CMakeLists.txt:5 (file)
-file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/stephen/study_c/display/src/*.c")
+file(GLOB NEW_GLOB LIST_DIRECTORIES true "/home/stephen/study_c/disdev/src/*.cpp")
 set(OLD_GLOB
-  "/home/stephen/study_c/display/src/test.c"
+  "/home/stephen/study_c/disdev/src/Disdev.cpp"
+  "/home/stephen/study_c/disdev/src/test.cpp"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # srcs at oled/CMakeLists.txt:41 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/stephen/study_c/display/oled/include/*.h")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/stephen/study_c/disdev/oled/include/*.h")
 set(OLD_GLOB
-  "/home/stephen/study_c/display/oled/include/oled/DEV_Config.h"
-  "/home/stephen/study_c/display/oled/include/oled/Debug.h"
-  "/home/stephen/study_c/display/oled/include/oled/GUI_BMPfile.h"
-  "/home/stephen/study_c/display/oled/include/oled/GUI_Paint.h"
-  "/home/stephen/study_c/display/oled/include/oled/OLED_1in5.h"
-  "/home/stephen/study_c/display/oled/include/oled/RPI_sysfs_gpio.h"
-  "/home/stephen/study_c/display/oled/include/oled/dev_hardware_SPI.h"
-  "/home/stephen/study_c/display/oled/include/oled/dev_hardware_i2c.h"
-  "/home/stephen/study_c/display/oled/include/oled/fonts.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/DEV_Config.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/Debug.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/GUI_BMPfile.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/GUI_Paint.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/OLED_1in5.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/RPI_sysfs_gpio.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/dev_hardware_SPI.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/dev_hardware_i2c.h"
+  "/home/stephen/study_c/disdev/oled/include/oled/fonts.h"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs")
 endif()
 
 # srcs at oled/CMakeLists.txt:41 (file)
-file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/stephen/study_c/display/oled/src/*.c")
+file(GLOB_RECURSE NEW_GLOB LIST_DIRECTORIES false "/home/stephen/study_c/disdev/oled/src/*.c")
 set(OLD_GLOB
-  "/home/stephen/study_c/display/oled/src/DEV_Config.c"
-  "/home/stephen/study_c/display/oled/src/GUI_BMPfile.c"
-  "/home/stephen/study_c/display/oled/src/GUI_Paint.c"
-  "/home/stephen/study_c/display/oled/src/OLED_1in5.c"
-  "/home/stephen/study_c/display/oled/src/RPI_sysfs_gpio.c"
-  "/home/stephen/study_c/display/oled/src/dev_hardware_SPI.c"
-  "/home/stephen/study_c/display/oled/src/dev_hardware_i2c.c"
-  "/home/stephen/study_c/display/oled/src/font12.c"
-  "/home/stephen/study_c/display/oled/src/font12CN.c"
-  "/home/stephen/study_c/display/oled/src/font16.c"
-  "/home/stephen/study_c/display/oled/src/font20.c"
-  "/home/stephen/study_c/display/oled/src/font24.c"
-  "/home/stephen/study_c/display/oled/src/font24CN.c"
-  "/home/stephen/study_c/display/oled/src/font8.c"
+  "/home/stephen/study_c/disdev/oled/src/DEV_Config.c"
+  "/home/stephen/study_c/disdev/oled/src/GUI_BMPfile.c"
+  "/home/stephen/study_c/disdev/oled/src/GUI_Paint.c"
+  "/home/stephen/study_c/disdev/oled/src/OLED_1in5.c"
+  "/home/stephen/study_c/disdev/oled/src/RPI_sysfs_gpio.c"
+  "/home/stephen/study_c/disdev/oled/src/dev_hardware_SPI.c"
+  "/home/stephen/study_c/disdev/oled/src/dev_hardware_i2c.c"
+  "/home/stephen/study_c/disdev/oled/src/font12.c"
+  "/home/stephen/study_c/disdev/oled/src/font12CN.c"
+  "/home/stephen/study_c/disdev/oled/src/font16.c"
+  "/home/stephen/study_c/disdev/oled/src/font20.c"
+  "/home/stephen/study_c/disdev/oled/src/font24.c"
+  "/home/stephen/study_c/disdev/oled/src/font24CN.c"
+  "/home/stephen/study_c/disdev/oled/src/font8.c"
   )
 if(NOT "${NEW_GLOB}" STREQUAL "${OLD_GLOB}")
   message("-- GLOB mismatch!")
-  file(TOUCH_NOCREATE "/home/stephen/study_c/display/build/CMakeFiles/cmake.verify_globs")
+  file(TOUCH_NOCREATE "/home/stephen/study_c/disdev/build/CMakeFiles/cmake.verify_globs")
 endif()

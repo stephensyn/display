@@ -67,7 +67,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/stephen/study_c/display/build"
+			"value" : "/home/stephen/study_c/disdev/build"
 		},
 		{
 			"name" : "CMAKE_CACHE_MAJOR_VERSION",
@@ -587,7 +587,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "/home/stephen/study_c/display"
+			"value" : "/home/stephen/study_c/disdev"
 		},
 		{
 			"name" : "CMAKE_INSTALL_PREFIX",
@@ -1171,7 +1171,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/stephen/study_c/display/build"
+			"value" : "/home/stephen/study_c/disdev/build"
 		},
 		{
 			"name" : "distest_SOURCE_DIR",
@@ -1183,7 +1183,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/stephen/study_c/display"
+			"value" : "/home/stephen/study_c/disdev"
 		},
 		{
 			"name" : "oled_BINARY_DIR",
@@ -1195,7 +1195,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/stephen/study_c/display/build/oled"
+			"value" : "/home/stephen/study_c/disdev/build/oled"
 		},
 		{
 			"name" : "oled_SOURCE_DIR",
@@ -1207,7 +1207,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "/home/stephen/study_c/display/oled"
+			"value" : "/home/stephen/study_c/disdev/oled"
 		}
 	],
 	"kind" : "cache",

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "unistd.h": "c"
+        "unistd.h": "c",
+        "oled_1in5.h": "c"
     }
 }
