@@ -1,4 +1,4 @@
-# display
+#OLED 1.5cun
 1.5寸OLED单色显示驱动测试。
 适用于树莓派P4
 原厂提供的是采用Makefile编译
