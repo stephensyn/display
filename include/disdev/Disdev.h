@@ -3,12 +3,8 @@
 
 extern "C"
 {
-#include <oled/GUI_Paint.h>
-#include <oled/GUI_BMPfile.h>
-#include <oled/Debug.h>
 #include <stdlib.h> // malloc() free()
 #include <math.h>
-#include <oled/DEV_Config.h>
 #include <oled/OLED_1in5.h>
 #include <oled/fonts.h>
 }
@@ -139,14 +135,14 @@ using namespace std;
 class Disdev
 {
 private:
-    /* data */
-    UBYTE *BlackImage;
-    // 新建一个图像属性，这个属性包括图像缓存的名称、宽度、高度、翻转角度、颜色
-    void Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color);
-
 public:
     Disdev(/* args */);
     ~Disdev();
+    /* data */
+    UBYTE *BlackImage;
+
+    // 新建一个图像属性，这个属性包括图像缓存的名称、宽度、高度、翻转角度、颜色
+    void Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color);
 
     void init();
 
