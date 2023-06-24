@@ -209,13 +209,6 @@ public:
     void Paint_DrawBitMap(const unsigned char *image_buffer);
     void Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Region);
     void refreshDispInfo(dispInfo sdisinfo);
-    //     string name = "default";
-    // double freq = 0.0;
-    // double power = 0.0;
-    // string state = "OFF";
-    // double battery = 0.0;
-    // bool charged = false;
-    // void refreshDispInfo(string name, double freq, double power, string state, double battery, bool charge);
 };
 
 #endif

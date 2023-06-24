@@ -7,9 +7,8 @@ int main(void)
 {
 
 	pDispdev->init();
-	OLED_1in5_Clear();
 	pDispdev->sdispinfo.battery = 0.25;
-	pDispdev->sdispinfo.charged = false;
+	pDispdev->sdispinfo.charged = true;
 	pDispdev->refreshDispInfo(pDispdev->sdispinfo);
 	// printf("1.5inch OLED test demo\n");
 	// if (DEV_ModuleInit() != 0) //
