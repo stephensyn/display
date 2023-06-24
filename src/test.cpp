@@ -7,7 +7,7 @@ int main(void)
 {
 
 	pDispdev->init();
-	pDispdev->sdispinfo.battery = 0.25;
+	pDispdev->sdispinfo.battery = 0.55;
 	pDispdev->sdispinfo.charged = true;
 	pDispdev->refreshDispInfo(pDispdev->sdispinfo);
 	// printf("1.5inch OLED test demo\n");

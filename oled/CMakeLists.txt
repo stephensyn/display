@@ -37,12 +37,12 @@ find_library(WIRINGPI_LIB ${WIRINGPI_LIB_NAME})
 
 
 
-
-file(GLOB_RECURSE srcs CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/*.c include/*.h)
+file(GLOB_RECURSE srcs-c CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/*.c include/*.h)
+file(GLOB_RECURSE srcs-cpp CONFIGURE_DEPENDS ${PROJECT_SOURCE_DIR}/src/*.cpp )
 
 message("源文件：" ${srcs})
 
-add_library(oled STATIC ${srcs})
+add_library(oled STATIC ${srcs-c} ${srcs-cpp})
 # target_sources(oled PUBULIC ${srcs})
 
  

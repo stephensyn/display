@@ -1,4 +1,4 @@
-#include <dispdev/Dispdev.h>
+#include <oled/Dispdev.h>
 
 Dispdev::Dispdev(/* args */)
 {
