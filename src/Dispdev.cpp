@@ -35,6 +35,10 @@ void Dispdev::init()
     Paint_SelectImage(BlackImage);
     DEV_Delay_ms(500);
     Paint_Clear(BLACK);
+
+    // 1、画电池图标外框
+    Paint_DrawRectangle(2, 2, 20, 10, WHITE, DOT_PIXEL_1X1, DRAW_FILL_EMPTY); // 电量外框
+    OLED_1in5_Display(BlackImage);
 }
 
 void Dispdev::Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color)
@@ -898,6 +902,169 @@ void Dispdev::Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Re
         }
     }
 }
-void Dispdev::refreshDispInfo(disInfo sdisinfo)
+// void Dispdev::refreshDispInfo(string name, double freq, double power, string state, double battery, bool charge);
+// {
+//     Paint_DrawRectangle(2, 2, 20, 10, WHITE, DOT_PIXEL_1X1, DRAW_FILL_EMPTY); // 电量外框
+//     OLED_1in5_Display(BlackImage);
+
+//     Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量1/4
+//     OLED_1in5_Display(BlackImage);
+//     DEV_Delay_ms(500);
+//     Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
+//     OLED_1in5_Display(BlackImage);
+//     DEV_Delay_ms(500);
+//     Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+//     OLED_1in5_Display(BlackImage);
+//     DEV_Delay_ms(500);
+//     Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+//     OLED_1in5_Display(BlackImage);
+//     DEV_Delay_ms(500);
+
+//     Paint_DrawString_EN(0, 20, "NAME:", &Font12, 0xFFFF, 0xFFFF);
+//     Paint_DrawString_EN(0, 32, "ABCDEFGHIJKLMNOPQR", &Font12, 0xFFFF, 0xFFFF);
+//     Paint_DrawString_EN(0, 52, "FREQ:", &Font12, 0xFFFF, 0xFFFF);
+//     Paint_DrawString_EN(0, 72, "POWER:", &Font12, 0xFFFF, 0xFFFF);
+//     Paint_DrawString_EN(0, 92, "STATE:", &Font12, 0xFFFF, 0xFFFF);
+//     Paint_DrawString_EN(0, 112, "BATTERY:", &Font12, 0xFFFF, 0xFFFF);
+
+//     OLED_1in5_Display(BlackImage);
+
+//     Paint_ClearWindows(3, 3, 18, 9, BLACK);
+//     OLED_1in5_Display(BlackImage);
+//     DEV_Delay_ms(500);
+// }
+
+// string name = "default";
+// double freq = 0.0;
+// double power = 0.0;
+// string state = "OFF";
+// double battery = 0.0;
+// bool charged = false;
+void Dispdev::refreshDispInfo(dispInfo info)
 {
+    // 1、显示电池电量/4G信号强度/GPS锁定状态
+    if (info.battery < 0.25)
+    {
+        // 0
+    }
+    else if (info.battery < 0.5)
+    {
+        // 1
+        Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量1/4
+        OLED_1in5_Display(BlackImage);
+    }
+    else if (info.battery < 0.75)
+    {
+        // 2
+        Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL);  // 电量1/4
+        Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
+        OLED_1in5_Display(BlackImage);
+    }
+    else if (info.battery < 0.95)
+    {
+        // 3
+        Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL);   // 电量1/4
+        Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL);  // 电量2/4
+        Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+        OLED_1in5_Display(BlackImage);
+    }
+    else
+    {
+        // 4
+        Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL);   // 电量1/4
+        Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL);  // 电量2/4
+        Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+        Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+        OLED_1in5_Display(BlackImage);
+    }
+
+    // 2、显示信号的 name\freq\power\state\battery属性
+    Paint_DrawString_EN(0, 20, "NAME:", &Font12, 0xFFFF, 0xFFFF);
+    // Paint_DrawString_EN(0, 32, "ABCDEFGHIJKLMNOPQR", &Font12, 0xFFFF, 0xFFFF);
+    Paint_DrawString_EN(0, 32, info.name.c_str(), &Font12, 0xFFFF, 0xFFFF);
+
+    Paint_DrawString_EN(0, 52, "FREQ:", &Font12, 0xFFFF, 0xFFFF);
+    Paint_DrawString_EN(50, 52, (std::to_string(info.freq)).c_str(), &Font12, 0xFFFF, 0xFFFF);
+
+    Paint_DrawString_EN(0, 72, "POWER:", &Font12, 0xFFFF, 0xFFFF);
+    Paint_DrawString_EN(50, 72, (to_string(info.power)).c_str(), &Font12, 0xFFFF, 0xFFFF);
+
+    Paint_DrawString_EN(0, 92, "STATE:", &Font12, 0xFFFF, 0xFFFF);
+    Paint_DrawString_EN(50, 92, info.state.c_str(), &Font12, 0xFFFF, 0xFFFF);
+
+    Paint_DrawString_EN(0, 112, "BATTERY:", &Font12, 0xFFFF, 0xFFFF);
+    Paint_DrawString_EN(65, 112, (to_string(info.battery)).c_str(), &Font12, 0xFFFF, 0xFFFF);
+
+    OLED_1in5_Display(BlackImage);
+
+    // Paint_ClearWindows(3, 3, 18, 9, BLACK);
+    OLED_1in5_Display(BlackImage);
+    DEV_Delay_ms(500);
+
+    // 3、充电状态电池图标的动态显示
+    while (info.charged)
+    {
+        if (info.battery < 0.25)
+        {
+            // 清除4格
+            Paint_ClearWindows(3, 3, 18, 9, BLACK);
+            OLED_1in5_Display(BlackImage);
+
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量1/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+        }
+        else if (info.battery < 0.5)
+        {
+            // 清除3格
+            Paint_ClearWindows(6, 3, 18, 9, BLACK);
+            OLED_1in5_Display(BlackImage);
+
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+        }
+        else if (info.battery < 0.75)
+        {
+            // 清除2格
+            Paint_ClearWindows(10, 3, 18, 9, BLACK);
+            OLED_1in5_Display(BlackImage);
+
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+        }
+        else if (info.battery < 0.95)
+        {
+            // 清除1格
+            Paint_ClearWindows(14, 3, 18, 9, BLACK);
+            OLED_1in5_Display(BlackImage);
+
+            DEV_Delay_ms(500);
+            Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+            OLED_1in5_Display(BlackImage);
+            DEV_Delay_ms(500);
+        }
+    }
 }
