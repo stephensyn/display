@@ -1,24 +1,12 @@
 
 // #include </home/stephen/study_c/display/include/display/test.h>
-extern "C"
-{
-	// #include <oled/GUI_Paint.h>
-	// #include <oled/GUI_BMPfile.h>
-	// #include <oled/Debug.h>
-
-#include <stdlib.h> // malloc() free()
-#include <math.h>
-
-// #include <oled/DEV_Config.h>
-#include <oled/OLED_1in5.h>
-}
-
-#include <disdev/Disdev.h>
-Disdev *pdisdev = new Disdev();
+#include <dispdev/test.h>
+Dispdev *pDispdev = new Dispdev();
 
 int main(void)
 {
-	pdisdev->init();
+
+	pDispdev->init();
 	OLED_1in5_Clear();
 	// printf("1.5inch OLED test demo\n");
 	// if (DEV_ModuleInit() != 0) //
@@ -48,8 +36,8 @@ int main(void)
 	// Paint_SelectImage(BlackImage);
 	// DEV_Delay_ms(500);
 	// Paint_Clear(BLACK);
-	pdisdev->Paint_DrawRectangle(2, 2, 20, 10, WHITE, DOT_PIXEL_1X1, DRAW_FILL_EMPTY); // 电量外框
-	OLED_1in5_Display(pdisdev->BlackImage);
+	pDispdev->Paint_DrawRectangle(2, 2, 20, 10, WHITE, DOT_PIXEL_1X1, DRAW_FILL_EMPTY); // 电量外框
+	OLED_1in5_Display(pDispdev->BlackImage);
 	while (1)
 	{
 
@@ -69,17 +57,17 @@ int main(void)
 
 		// for(int x=1;x<5;x++)
 		// {
-		pdisdev->Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量1/4
-		OLED_1in5_Display(pdisdev->BlackImage);
+		pDispdev->Paint_DrawRectangle(4, 4, 6, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量1/4
+		OLED_1in5_Display(pDispdev->BlackImage);
 		DEV_Delay_ms(500);
-		pdisdev->Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
-		OLED_1in5_Display(pdisdev->BlackImage);
+		pDispdev->Paint_DrawRectangle(8, 4, 10, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量2/4
+		OLED_1in5_Display(pDispdev->BlackImage);
 		DEV_Delay_ms(500);
-		pdisdev->Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
-		OLED_1in5_Display(pdisdev->BlackImage);
+		pDispdev->Paint_DrawRectangle(12, 4, 14, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量3/4
+		OLED_1in5_Display(pDispdev->BlackImage);
 		DEV_Delay_ms(500);
-		pdisdev->Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
-		OLED_1in5_Display(pdisdev->BlackImage);
+		pDispdev->Paint_DrawRectangle(16, 4, 18, 9, WHITE, DOT_PIXEL_1X1, DRAW_FILL_FULL); // 电量4/4
+		OLED_1in5_Display(pDispdev->BlackImage);
 		DEV_Delay_ms(500);
 		// }
 
@@ -102,29 +90,29 @@ int main(void)
 		// 	// Drawing on the image
 		// 	printf("Drawing:page 3\r\n");
 		// Paint_DrawString_EN(10, 0, "waveshare", &Font16, 0xFFFF, 0xFFFF);
-		// pdisdev->Paint_DrawString_EN(0, 20, "SIGNAL", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 20, "NAME:", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 32, "ABCDEFGHIJKLMNOPQR", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 52, "FREQ:", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 72, "POWER:", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 92, "STATE:", &Font12, 0xFFFF, 0xFFFF);
-		pdisdev->Paint_DrawString_EN(0, 112, "BATTERY:", &Font12, 0xFFFF, 0xFFFF);
+		// pDispdev->Paint_DrawString_EN(0, 20, "SIGNAL", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 20, "NAME:", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 32, "ABCDEFGHIJKLMNOPQR", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 52, "FREQ:", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 72, "POWER:", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 92, "STATE:", &Font12, 0xFFFF, 0xFFFF);
+		pDispdev->Paint_DrawString_EN(0, 112, "BATTERY:", &Font12, 0xFFFF, 0xFFFF);
 		// Paint_DrawString_EN(10, 17, "hello world", &Font8, 0x2, 0xc);
 		// 	Paint_DrawNum(10, 30, 123.456789, &Font8, 4, 0x3, 0xd);
 		// 	Paint_DrawNum(10, 43, 987654, &Font12, 5, 0x4, 0xe);
 		// 	// Show image on page2
-		OLED_1in5_Display(pdisdev->BlackImage);
+		OLED_1in5_Display(pDispdev->BlackImage);
 		// DEV_Delay_ms(2000);
 		// 	Paint_Clear(BLACK);
-		// pdisdev->Paint_Clear(BLACK);
+		// pDispdev->Paint_Clear(BLACK);
 		// 	// Drawing on the image
 		// 	printf("Drawing:page 4\r\n");
 		// 	Paint_DrawString_CN(10, 0, "树莓派", &Font12CN, WHITE, WHITE);
-		// pdisdev->Paint_DrawString_CN(10, 0, "树莓派", &Font12CN, WHITE, WHITE);
+		// pDispdev->Paint_DrawString_CN(10, 0, "树莓派", &Font12CN, WHITE, WHITE);
 		// 	Paint_DrawString_CN(0, 20, "微软", &Font24CN, WHITE, WHITE);
 		// 	// Show image on page3
 		// OLED_1in5_Display(BlackImage);
-		// OLED_1in5_Display(pdisdev->BlackImage);
+		// OLED_1in5_Display(pDispdev->BlackImage);
 		// DEV_Delay_ms(2000);
 		// 	Paint_Clear(BLACK);
 
@@ -134,9 +122,9 @@ int main(void)
 		// 	// Show image on page4
 		// 	OLED_1in5_Display(BlackImage);
 		// DEV_Delay_ms(500);
-		// pdisdev->Paint_Clear(BLACK);
-		pdisdev->Paint_ClearWindows(3, 3, 18, 9, BLACK);
-		OLED_1in5_Display(pdisdev->BlackImage);
+		// pDispdev->Paint_Clear(BLACK);
+		pDispdev->Paint_ClearWindows(3, 3, 18, 9, BLACK);
+		OLED_1in5_Display(pDispdev->BlackImage);
 		// OLED_1in5_Clear();
 		DEV_Delay_ms(500);
 	}

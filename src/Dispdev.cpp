@@ -1,15 +1,15 @@
-#include <disdev/Disdev.h>
+#include <dispdev/Dispdev.h>
 
-Disdev::Disdev(/* args */)
+Dispdev::Dispdev(/* args */)
 {
     //  void init();
 }
 
-Disdev::~Disdev()
+Dispdev::~Dispdev()
 {
 }
 
-void Disdev::init()
+void Dispdev::init()
 {
     printf("1.5inch OLED test demo\n");
     DEV_ModuleInit();
@@ -37,7 +37,7 @@ void Disdev::init()
     Paint_Clear(BLACK);
 }
 
-void Disdev::Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color)
+void Dispdev::Paint_NewImage(UBYTE *image, UWORD Width, UWORD Height, UWORD Rotate, UWORD Color)
 {
     Paint.Image = NULL;
     Paint.Image = image;
@@ -72,7 +72,7 @@ function: Select Image
 parameter:
     image : Pointer to the image cache
 ******************************************************************************/
-void Disdev::Paint_SelectImage(UBYTE *image)
+void Dispdev::Paint_SelectImage(UBYTE *image)
 {
     Paint.Image = image;
 }
@@ -82,7 +82,7 @@ function: Select Image Rotate
 parameter:
     Rotate : 0,90,180,270
 ******************************************************************************/
-void Disdev::Paint_SetRotate(UWORD Rotate)
+void Dispdev::Paint_SetRotate(UWORD Rotate)
 {
     if (Rotate == ROTATE_0 || Rotate == ROTATE_90 || Rotate == ROTATE_180 || Rotate == ROTATE_270)
     {
@@ -95,7 +95,7 @@ void Disdev::Paint_SetRotate(UWORD Rotate)
     }
 }
 
-void Disdev::Paint_SetScale(UBYTE scale)
+void Dispdev::Paint_SetScale(UBYTE scale)
 {
     if (scale == 2)
     {
@@ -128,7 +128,7 @@ function:	Select Image mirror
 parameter:
     mirror   :Not mirror,Horizontal mirror,Vertical mirror,Origin mirror
 ******************************************************************************/
-void Disdev::Paint_SetMirroring(UBYTE mirror)
+void Dispdev::Paint_SetMirroring(UBYTE mirror)
 {
     if (mirror == MIRROR_NONE || mirror == MIRROR_HORIZONTAL ||
         mirror == MIRROR_VERTICAL || mirror == MIRROR_ORIGIN)
@@ -150,7 +150,7 @@ parameter:
     Ypoint : At point Y
     Color  : Painted colors
 ******************************************************************************/
-void Disdev::Paint_SetPixel(UWORD Xpoint, UWORD Ypoint, UWORD Color)
+void Dispdev::Paint_SetPixel(UWORD Xpoint, UWORD Ypoint, UWORD Color)
 {
     if (Xpoint > Paint.Width || Ypoint > Paint.Height)
     {
@@ -244,7 +244,7 @@ function: Clear the color of the picture
 parameter:
     Color : Painted colors
 ******************************************************************************/
-void Disdev::Paint_Clear(UWORD Color)
+void Dispdev::Paint_Clear(UWORD Color)
 {
     if (Paint.Scale == 2 || Paint.Scale == 4)
     {
@@ -292,7 +292,7 @@ parameter:
     Yend   : y end point
     Color  : Painted colors
 ******************************************************************************/
-void Disdev::Paint_ClearWindows(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, UWORD Color)
+void Dispdev::Paint_ClearWindows(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend, UWORD Color)
 {
     UWORD X, Y;
     for (Y = Ystart; Y < Yend; Y++)
@@ -313,8 +313,8 @@ parameter:
     Dot_Pixel	: point size
     Dot_Style	: point Style
 ******************************************************************************/
-void Disdev::Paint_DrawPoint(UWORD Xpoint, UWORD Ypoint, UWORD Color,
-                             DOT_PIXEL Dot_Pixel, DOT_STYLE Dot_Style)
+void Dispdev::Paint_DrawPoint(UWORD Xpoint, UWORD Ypoint, UWORD Color,
+                              DOT_PIXEL Dot_Pixel, DOT_STYLE Dot_Style)
 {
     if (Xpoint > Paint.Width || Ypoint > Paint.Height)
     {
@@ -361,8 +361,8 @@ parameter:
     Line_width : Line width
     Line_Style: Solid and dotted lines
 ******************************************************************************/
-void Disdev::Paint_DrawLine(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend,
-                            UWORD Color, DOT_PIXEL Line_width, LINE_STYLE Line_Style)
+void Dispdev::Paint_DrawLine(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend,
+                             UWORD Color, DOT_PIXEL Line_width, LINE_STYLE Line_Style)
 {
     if (Xstart > Paint.Width || Ystart > Paint.Height ||
         Xend > Paint.Width || Yend > Paint.Height)
@@ -429,8 +429,8 @@ parameter:
     Line_width: Line width
     Draw_Fill : Whether to fill the inside of the rectangle
 ******************************************************************************/
-void Disdev::Paint_DrawRectangle(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend,
-                                 UWORD Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill)
+void Dispdev::Paint_DrawRectangle(UWORD Xstart, UWORD Ystart, UWORD Xend, UWORD Yend,
+                                  UWORD Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill)
 {
     if (Xstart > Paint.Width || Ystart > Paint.Height ||
         Xend > Paint.Width || Yend > Paint.Height)
@@ -467,8 +467,8 @@ parameter:
     Line_width: Line width
     Draw_Fill : Whether to fill the inside of the Circle
 ******************************************************************************/
-void Disdev::Paint_DrawCircle(UWORD X_Center, UWORD Y_Center, UWORD Radius,
-                              UWORD Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill)
+void Dispdev::Paint_DrawCircle(UWORD X_Center, UWORD Y_Center, UWORD Radius,
+                               UWORD Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill)
 {
     if (X_Center > Paint.Width || Y_Center >= Paint.Height)
     {
@@ -545,8 +545,8 @@ parameter:
     Color_Foreground : Select the foreground color
     Color_Background : Select the background color
 ******************************************************************************/
-void Disdev::Paint_DrawChar(UWORD Xpoint, UWORD Ypoint, const char Acsii_Char,
-                            sFONT *Font, UWORD Color_Foreground, UWORD Color_Background)
+void Dispdev::Paint_DrawChar(UWORD Xpoint, UWORD Ypoint, const char Acsii_Char,
+                             sFONT *Font, UWORD Color_Foreground, UWORD Color_Background)
 {
     UWORD Page, Column;
 
@@ -603,8 +603,8 @@ parameter:
     Color_Foreground : Select the foreground color
     Color_Background : Select the background color
 ******************************************************************************/
-void Disdev::Paint_DrawString_EN(UWORD Xstart, UWORD Ystart, const char *pString,
-                                 sFONT *Font, UWORD Color_Foreground, UWORD Color_Background)
+void Dispdev::Paint_DrawString_EN(UWORD Xstart, UWORD Ystart, const char *pString,
+                                  sFONT *Font, UWORD Color_Foreground, UWORD Color_Background)
 {
     UWORD Xpoint = Xstart;
     UWORD Ypoint = Ystart;
@@ -651,8 +651,8 @@ parameter:
     Color_Foreground : Select the foreground color
     Color_Background : Select the background color
 ******************************************************************************/
-void Disdev::Paint_DrawString_CN(UWORD Xstart, UWORD Ystart, const char *pString, cFONT *font,
-                                 UWORD Color_Foreground, UWORD Color_Background)
+void Dispdev::Paint_DrawString_CN(UWORD Xstart, UWORD Ystart, const char *pString, cFONT *font,
+                                  UWORD Color_Foreground, UWORD Color_Background)
 {
     const char *p_text = pString;
     int x = Xstart, y = Ystart;
@@ -778,8 +778,8 @@ parameter:
     Color_Background : Select the background color
 ******************************************************************************/
 #define ARRAY_LEN 255
-void Disdev::Paint_DrawNum(UWORD Xpoint, UWORD Ypoint, double Nummber,
-                           sFONT *Font, UWORD Digit, UWORD Color_Foreground, UWORD Color_Background)
+void Dispdev::Paint_DrawNum(UWORD Xpoint, UWORD Ypoint, double Nummber,
+                            sFONT *Font, UWORD Digit, UWORD Color_Foreground, UWORD Color_Background)
 {
     int16_t Num_Bit = 0, Str_Bit = 0;
     uint8_t Str_Array[ARRAY_LEN] = {0}, Num_Array[ARRAY_LEN] = {0};
@@ -843,8 +843,8 @@ parameter:
     Color_Foreground : Select the foreground color
     Color_Background : Select the background color
 ******************************************************************************/
-void Disdev::Paint_DrawTime(UWORD Xstart, UWORD Ystart, PAINT_TIME *pTime, sFONT *Font,
-                            UWORD Color_Foreground, UWORD Color_Background)
+void Dispdev::Paint_DrawTime(UWORD Xstart, UWORD Ystart, PAINT_TIME *pTime, sFONT *Font,
+                             UWORD Color_Foreground, UWORD Color_Background)
 {
     uint8_t value[10] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9'};
 
@@ -869,7 +869,7 @@ info:
     Use a computer to convert the image into a corresponding array,
     and then embed the array directly into Imagedata.cpp as a .c file.
 ******************************************************************************/
-void Disdev::Paint_DrawBitMap(const unsigned char *image_buffer)
+void Dispdev::Paint_DrawBitMap(const unsigned char *image_buffer)
 {
     UWORD x, y;
     UDOUBLE Addr = 0;
@@ -884,7 +884,7 @@ void Disdev::Paint_DrawBitMap(const unsigned char *image_buffer)
     }
 }
 
-void Disdev::Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Region)
+void Dispdev::Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Region)
 {
     UWORD x, y;
     UDOUBLE Addr = 0;
@@ -897,4 +897,7 @@ void Disdev::Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Reg
                 (unsigned char)image_buffer[Addr + (Paint.HeightByte) * Paint.WidthByte * (Region - 1)];
         }
     }
+}
+void Dispdev::refreshDispInfo(disInfo sdisinfo)
+{
 }

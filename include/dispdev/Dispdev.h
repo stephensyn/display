@@ -1,5 +1,5 @@
-#ifndef _DISDEV_H_
-#define _DISDEV_H_
+#ifndef _Dispdev_H_
+#define _Dispdev_H_
 
 extern "C"
 {
@@ -132,12 +132,24 @@ extern PAINT_TIME sPaint_time;
 
 using namespace std;
 
-class Disdev
+class Dispdev
 {
 private:
 public:
-    Disdev(/* args */);
-    ~Disdev();
+    // 定义信息结构体
+    struct disInfo
+    {
+        string name = "default";
+        double freq = 0.0;
+        double power = 0.0;
+        string state = "OFF";
+        double battery = 0.0;
+        bool charged = false;
+    };
+    disInfo sdisInfo;
+
+    Dispdev(/* args */);
+    ~Dispdev();
     /* data */
     UBYTE *BlackImage;
 
@@ -195,6 +207,7 @@ public:
                           UWORD Color, DOT_PIXEL Line_width, DRAW_FILL Draw_Fill);
     void Paint_DrawBitMap(const unsigned char *image_buffer);
     void Paint_DrawBitMap_Block(const unsigned char *image_buffer, UBYTE Region);
+    void refreshDispInfo(disInfo sdisinfo);
 };
 
 #endif
